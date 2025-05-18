@@ -2,6 +2,7 @@
 /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 .page {
   color: var(--text-color);
+  font-family: var(--main-font), monospace;
   background-color: var(--bg-color);
   background-image: var(--bg-image);
   background-position: center;
@@ -50,7 +51,7 @@
   content: "REC";
   position: absolute;
   top: 9px;
-  right: 28px;
+  right: 38px;
   display: block;
   color: var(--accent-color);
   font-weight: 400;
@@ -62,7 +63,7 @@
   content: "";
   position: absolute;
   top: 17px;
-  right: 8px;
+  right: 19px;
   border-radius: 50%;
   box-shadow: 0px 0px 4px 2px var(--accent-color);
   background: var(--accent-color);
@@ -97,10 +98,11 @@
 
 .header__theme-menu-button_active {
   outline: 1px solid var(--button-color);
+  pointer-events: none;
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid var(--outline-color);
+  border-block-end: 1px solid var(--button-color);
   cursor: pointer;
 }
 
@@ -160,7 +162,7 @@
 }
 
 .content__section-link:hover {
-  border-block-end: 1px solid var(--button-color);
+  border-block-end: 1px solid var(--text-color);
 }
 
 .content__section-link:focus {
@@ -168,7 +170,7 @@
 }
 
 .content__section-link:focus-visible {
-  outline: 1px solid var(--outline-color);
+  outline: 1px solid var(--text-color);
 }
 
 .content__list {
@@ -202,6 +204,10 @@
 }
 
 .content__article p:not(:last-of-type) {
+  margin-block-end: var(--content-margin);
+}
+
+.content-block p:not(:last-of-type) {
   margin-block-end: var(--content-margin);
 }
 
@@ -269,10 +275,12 @@
 
   .header__pseudo-element::before {
     top: 19px;
+    right: 48px;
   }
 
   .header__pseudo-element::after {
     top: 28px;
+    right: 30px;
   }
   .content__section--grid {
     display: grid;

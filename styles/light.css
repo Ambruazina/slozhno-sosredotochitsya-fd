@@ -37,10 +37,6 @@
   }
 }
 
-.theme-light .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
-}
-
 .theme-light .header__pseudo-element::before {
   display: none;
 }
