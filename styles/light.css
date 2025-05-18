@@ -17,6 +17,7 @@
   --text-color: #353430;
   --text-color-title: #ffc2e6;
   --accent-color: #ff8dcb;
+  --pseudo-color: transparent;
   --outline-color: rgba(50, 49, 45, 0.4);
   --bg-image: url(../images/cover-image-light.png);
 }
@@ -30,17 +31,10 @@
     --article-text-color: #353430;
     --bg-color: #fff1f7;
     --text-color: #353430;
+      --pseudo-color: transparent;
     --text-color-title: #ffc2e6;
     --accent-color: #ff8dcb;
     --outline-color: rgba(50, 49, 45, 0.4);
     --bg-image: url(../images/cover-image-light.png);
   }
-}
-
-.theme-light .header__pseudo-element::before {
-  display: none;
-}
-
-.theme-light .header__pseudo-element::after {
-  display: none;
 }
