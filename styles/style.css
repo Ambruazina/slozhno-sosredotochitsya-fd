@@ -1,16 +1,12 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 .page {
-  width: 100%;
-  height: 100vh;
-  padding-inline: var(--outer-padding);
   color: var(--text-color);
   background-color: var(--bg-color);
   background-image: var(--bg-image);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  margin: 0 auto
 }
 
 .header {
@@ -19,6 +15,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr min-content 1fr;
   margin-block-end: var(--page-margin);
+  padding-inline: var(--outer-padding);
   padding-block: var(--outer-padding);
   inline-size: 100%;
   block-size: 100vh;
@@ -29,7 +26,7 @@
   content: "";
   position: absolute;
   top: 10px;
-  right: 0;
+  right: 10px;
   border-inline-end: 1px solid var(--button-color);
   border-block-start: 1px solid var(--button-color);
   background: transparent;
@@ -41,7 +38,7 @@
   content: "";
   position: absolute;
   bottom: 10px;
-  left: 0;
+  left: 10px;
   border-inline-start: 1px solid var(--button-color);
   border-block-end: 1px solid var(--button-color);
   background: transparent;
@@ -140,6 +137,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--section-gap);
+  padding-inline: var(--outer-padding);
 }
 
 .content__section {
@@ -211,7 +209,7 @@
   margin-block-end: var(--content-margin);
 }
 
-.content__article-grid {
+.content__article--grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
@@ -226,6 +224,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .footer {
@@ -256,10 +255,12 @@
 
   .decorated-zone::before {
     top: 20px;
+    right: 20px;
   }
 
   .decorated-zone::after {
     bottom: 20px;
+    left: 20px;
   }
 
   .header__title {
@@ -273,7 +274,7 @@
   .header__pseudo-element::after {
     top: 28px;
   }
-  .content__section-grid {
+  .content__section--grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
@@ -283,12 +284,11 @@
     grid-column: 2/4;
   }
 
-  .content__title-size {
+  .content__title--size {
     inline-size: 30%;
   }
 
-  .content__article-grid {
-    display: grid;
+  .content__article--grid {
     grid-template-columns: repeat(
       auto-fit,
       minmax(calc((100% - 40px) / 3), 1fr)
@@ -325,6 +325,7 @@
   }
 
   .footer {
+    padding-inline: var(--outer-padding);
     min-block-size: 1024px;
   }
 }
@@ -348,17 +349,17 @@
     gap: 12px;
   }
 
-  .content__section-grid {
+  .content__section--grid {
     gap: 20px;
   }
 
-  .content__section-position {
+  .content__section--position {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 
-  .content__section-position .content__title {
+  .content__section--position .content__title {
     grid-column: 1 / 4;
     inline-size: 30%;
   }
